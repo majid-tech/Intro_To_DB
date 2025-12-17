@@ -11,7 +11,7 @@ cursor = mydb.cursor()
 try:
     cursor.execute("CREATE DATABASE IF NOT EXISTS alx_book_store;")
     print("Database 'alx_book_store' created successfully!")
-except ConnectionAbortedError:
+except mysql.connector.Error:
     print("ERROR: Failed to connect to the database")
 
 cursor.close()
